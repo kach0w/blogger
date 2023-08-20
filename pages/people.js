@@ -43,21 +43,27 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet"/>
       </Head>
       <Navbar />
-      <div className='w-[40rem] mx-auto'>    
+      <div className='w-[40rem] mx-auto'> 
+        <p className='pt-5 text-[1.1rem]'>Note that this is only the people who selected "public" when signing up.</p>   
         <ul>
             {peoples.map((person) => {
                 const noedit = false;
                 const yesedit = true;
+                const blogurl =`/blog?name=${person.name}`;
                 if(emailAddress !== person.email){
                     return (
                     <li className="mt-10" key={person.id}>
+                      <a href={blogurl}>
                         <Profile edit={noedit} jamal={person.email} />
+                      </a>
                     </li>
                     );
                 } else {
                     return (
                     <li className="mt-10" key={person.id}>
-                    <Profile edit={yesedit} jamal={person.email} />
+                      <a href={blogurl}>
+                        <Profile edit={yesedit} jamal={person.email} />
+                      </a>
                     </li>
                     );
                 }

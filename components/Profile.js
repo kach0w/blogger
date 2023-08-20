@@ -67,12 +67,12 @@ const Profile = ({ edit, jamal }) => {
     })
   return (
     <div className=''>
-          <div className='rounded-md text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)] w-[40rem] h-[20rem] mx-auto'>
+          <div className='group rounded-md text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)] w-[40rem] h-[20rem] mx-auto'>
             <div id="nvbr" className='h-[20rem] float-left align-middle rounded-l-md'>
               <img className="w-[13rem] p-4 mx-auto inline-block mt-[3rem]" src={imgurl}/>
             </div>
             <div className='inline-block'>
-              <b><p className=' pt-5 text-[2rem] inline-block'>{name}</p></b>
+              <b><p className='group-hover:underline pt-5 text-[2rem] inline-block'>{name}</p></b>
               {isEditing ? (
                 <div>
                   <input
