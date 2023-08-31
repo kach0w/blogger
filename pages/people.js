@@ -43,7 +43,7 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet"/>
       </Head>
       <Navbar />
-      <div className='w-[40rem] mx-auto'> 
+      <div className='w-[40rem] pt-[8rem] mx-auto'> 
         <p className='pt-5 text-[1.1rem]'>Note that this is only the people who selected "public" when signing up.</p>   
         <ul>
             {peoples.map((person) => {

@@ -32,7 +32,7 @@ const Profile = ({ edit, jamal }) => {
         console.log(edit)        
         
       async function fetchProfile(){
-        const profileref = db.collection('users').doc(jamal)
+        const profileref = db.collection('users').doc(jamal || "karsab343@gmail.com")
         profileref.get().then((doc) => {
           setName(doc.data().name)
           setImageUrl(`https://source.boringavatars.com/beam/120/${doc.data().name}?colors=264653,2a9d8f,e9c46a,f4a261,e76f51`)
@@ -72,7 +72,7 @@ const Profile = ({ edit, jamal }) => {
               <img className="w-[13rem] p-4 mx-auto inline-block mt-[3rem]" src={imgurl}/>
             </div>
             <div className='inline-block'>
-              <b><p className='group-hover:underline pt-5 text-[2rem] inline-block'>{name}</p></b>
+              <b><p className='group-hover:underline pt-5 text-[1.5rem] inline-block'>{name}</p></b>
               {isEditing ? (
                 <div>
                   <input

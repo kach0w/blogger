@@ -62,38 +62,39 @@ const SignUp = () => {
           <Form style={{maxWidth: '700px', margin: 'auto'}} onSubmit={onSubmit}>
           { error && <Alert className="text-[red] pb-2 sm:w-[20rem] mx-auto" color="danger">{error}</Alert>}
             
-            <FormGroup row>
-              {/* <Label for="signUpEmail" sm={4}>Email</Label> */}
+            <FormGroup row className='text-left w-[16rem] mx-auto'>
+              <Label for="signUpEmail" sm={4}>Name</Label>
               <Col>
                 <Input
-                    className='rounded-md p-2 w-[16rem] text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)]'
+                    className='rounded-md p-2 w-[16rem] text-[black] border'
                     type="name"
                   value={name}
                   onChange={(event) => setName(event.target.value)}
                   name="name"
                   id="signUpName"
-                  placeholder="Name" />
+                  placeholder="" />
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-3 space-x-1'>
-              {/* <Label for="birthday" sm={2}>
+            <FormGroup row className='pt-3 space-x-1 text-left w-[16rem] mx-auto'>
+              <Label  className="inline-block pl-1 pr-[5.3rem]" for="birthday" sm={2}>
                 Birthday
-              </Label> */}
+              </Label>
+              <Label for="location" sm={2}>
+                Location
+              </Label>
               <Col className="inline-block" sm={3}>
                 <Input
-                  className='rounded-md p-2 w-[9rem] text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)]'
+                  className='rounded-md p-2 w-[9rem] text-[black] border'
                   value={birthday}
                   onChange={(event) => setBirthday(event.target.value)}
                   name="birthday"
                   type="date"
                   placeholder="" />
               </Col>
-              {/* <Label for="location" sm={2}>
-                Location
-              </Label> */}
+              
               <Col className='inline-block' sm={2}>
                 <Input
-                    className='rounded-md p-2 w-[7rem] text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)]'
+                    className='rounded-md p-2 w-[6rem] text-[black] border'
                     type="location"
                   value={location}
                   onChange={(event) => setLocation(event.target.value)}
@@ -102,29 +103,30 @@ const SignUp = () => {
                   placeholder="Location" />
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-3'>
+            <FormGroup row className='pt-5 text-left w-[16rem] mx-auto'>
+              <Label for="privacy" sm={4}>Profile</Label>
               <Col sm={2}>
-                <Input className=" w-[16rem] p-2 rounded-md shadow-[0_1px_4px_rgba(0,0,0,0.30)] bg-[white] " type="select" name="privacy" id="privacy" value={privacy} onChange={handlePrivacyChange}>
+                <Input className=" w-[16rem] p-2 rounded-md border bg-[white] " type="select" name="privacy" id="privacy" value={privacy} onChange={handlePrivacyChange}>
                   <option value="public">Public</option>
                   <option value="private">Private</option>
                 </Input>
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-3'>
-              {/* <Label for="signUpEmail" sm={4}>Email</Label> */}
+            <FormGroup row className='pt-3 text-left w-[16rem] mx-auto'>
+              <Label for="signUpEmail" sm={4}>Email Address</Label>
               <Col sm={8}>
                 <Input
-                    className='rounded-md p-2 text-[black] w-[16rem] shadow-[0_1px_4px_rgba(0,0,0,0.30)]'
+                    className='rounded-md p-2 text-[black] w-[16rem] border'
                     type="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                   name="email"
                   id="signUpEmail"
-                  placeholder="Email" />
+                  placeholder="" />
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-3'>
-              {/* <Label for="signUpPassword" sm={4}>Password</Label> */}
+            <FormGroup row className='pt-3 text-left w-[16rem] mx-auto'>
+              <Label for="signUpPassword" sm={4}>Password</Label>
               <Col sm={8}>
                 <Input
                     className='rounded-md p-2 w-[16rem] text-[black] shadow-[0_1px_4px_rgba(0,0,0,0.30)]'
@@ -133,10 +135,10 @@ const SignUp = () => {
                   value={passwordOne}
                   onChange={(event) => setPasswordOne(event.target.value)}
                   id="signUpPassword"
-                  placeholder="Password" />
+                  placeholder="" />
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-3'>
+            <FormGroup row className='pt-3 text-left w-[16rem] mx-auto'>
               <Label className="text-[#222]" for="signUpPassword2" sm={8}>Confirm Password</Label>
               <Col sm={8}>
                 <Input
@@ -146,12 +148,12 @@ const SignUp = () => {
                   value={passwordTwo}
                   onChange={(event) => setPasswordTwo(event.target.value)}
                   id="signUpPassword2"
-                  placeholder="Password" />
+                  placeholder="" />
               </Col>
             </FormGroup>
-            <FormGroup row className='pt-11'>
+            <FormGroup row className='pt-11 w-[16rem] mx-auto'>
              <Col>
-             <Button className='bg-[#3b82f6] py-2 px-8 rounded-lg hover:shadow-lg hover:text-slate-200'>Sign Up</Button>
+             <Button className='bg-[#3b82f6] w-[16rem] mx-auto  py-2 px-8 text-white rounded-lg hover:shadow-lg hover:text-slate-300'>Sign Up</Button>
              </Col>
            </FormGroup>
            <FormGroup row className='pt-[5rem] text-slate-700'>
