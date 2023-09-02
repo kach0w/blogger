@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import {db} from '../lib/firebase'
 import { useAuth } from '../context/AuthUserContext';
 
-const Profile = ({ edit, jamal }) => {
+const Profile = ({ edit, jamal, showPage }) => {
     const { authUser, signOut, emailAddress } = useAuth();
     const [name, setName] = useState([])
     const [aboutme, setAboutMe] = useState([])
@@ -15,6 +15,8 @@ const Profile = ({ edit, jamal }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [textValue, setTextValue] = useState('');
     const [imgurl, setImageUrl] = useState([])
+    const emailLink = "mailto:" + jamal;
+    const blogLink = "/blog?emailAddress=" + jamal;
     const handleEditClick = () => {
       setIsEditing(true);
     };
@@ -95,7 +97,7 @@ const Profile = ({ edit, jamal }) => {
                 </div>
               )}
               <hr></hr>
-              <div className='pt-3 space-x-[75px]' >
+              <div className='py-3 space-x-[75px]' >
                 <div className='inline-block text-left text-slate-500'>
                   Email:
                   <br></br>
@@ -106,7 +108,7 @@ const Profile = ({ edit, jamal }) => {
                   Profile:
                 </div>
                 <div className='inline-block text-left'>
-                  <a href="mailto:karsab343@gmail.com">{jamal}</a>
+                  <a href={emailLink}>{jamal}</a>
                   <br></br>
                   {String(birthday).substring(5, 7) + "-" + String(birthday).substring(0, 4)}
                   <br></br>
@@ -114,9 +116,21 @@ const Profile = ({ edit, jamal }) => {
                   <br></br>
                   {privacy}
                 </div>
-                
               </div>
-              
+              <div className='text-left w-[21rem] mx-auto'>
+                  {showPage ? (
+                    <div className='text-left '>
+                      <hr></hr>
+                      <a className="pt-[2rem] " href={blogLink}>{String(name).split(" ")[0]}'s Blog</a> 
+                      </div>
+                    ) : (
+                    <div className='hidden'> 
+                      <hr></hr>
+                      <a className="pt-[2rem] hidden" href={blogLink}>{String(name).split(" ")[0]}'s Blog</a> 
+                    </div>
+                      
+                  )}
+                </div>
             </div> 
           </div>
         </div>

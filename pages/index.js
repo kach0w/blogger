@@ -22,6 +22,8 @@ export default function Home() {
     setIsEditing(true);
   };
   const yesedit = true;
+  const showPage = true;
+  const noPage = false;
 
   const handleSaveClick = () => {
     db.collection("users").doc(emailAddress).update({ aboutme: textValue })
@@ -61,7 +63,7 @@ export default function Home() {
 
         </div>
         <div className='w-[50vw] float-right'>
-        <Profile edit={yesedit} jamal={emailAddress} /> 
+        <Profile edit={yesedit} jamal={emailAddress} showPage={noPage}  /> 
 
         </div>
       </div>

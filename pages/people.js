@@ -49,12 +49,14 @@ export default function Home() {
             {peoples.map((person) => {
                 const noedit = false;
                 const yesedit = true;
+                const showPage = true;
+                const noPage = false;
                 const blogurl =`/blog?name=${person.name}`;
                 if(emailAddress !== person.email){
                     return (
                     <li className="mt-10" key={person.id}>
                       <a href={blogurl}>
-                        <Profile edit={noedit} jamal={person.email} />
+                        <Profile edit={noedit} jamal={person.email} showPage="true" />
                       </a>
                     </li>
                     );
@@ -62,7 +64,7 @@ export default function Home() {
                     return (
                     <li className="mt-10" key={person.id}>
                       <a href={blogurl}>
-                        <Profile edit={yesedit} jamal={person.email} />
+                        <Profile edit={yesedit} jamal={person.email} showPage={showPage}   />
                       </a>
                     </li>
                     );
