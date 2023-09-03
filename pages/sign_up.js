@@ -7,6 +7,7 @@ import { useAuth } from '../context/AuthUserContext';
 import {Container, Row, Col, Button, Form, FormGroup, Label, Input, Alert} from 'reactstrap';
 
 const SignUp = () => {
+  const { authUser, emailAddress } = useAuth();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -21,7 +22,9 @@ const SignUp = () => {
   const [error, setError] = useState(null);
 
   const { createUserWithEmailAndPassword } = useAuth();
-
+  if(authUser !== null){
+    router.push('/')
+  }
   const onSubmit = event => {
     setError(null)
     if(passwordOne === passwordTwo)
@@ -51,7 +54,7 @@ const SignUp = () => {
   return (
     <div>
       <Navbar />
-      <Container className="text-center shadow-[0_1px_4px_rgba(0,0,0,0.30)] rounded-md p-4 w-[20rem] mt-5 sm:w-[30rem] mx-auto">
+      <Container className="text-center shadow-[0_1px_4px_rgba(0,0,0,0.30)] mt-[10rem] rounded-md p-4 w-[20rem] mt-5 sm:w-[30rem] mx-auto">
       <Row>
           <Col>
           <h2 className='text-[24px] sm:text-[40px] pb-2 text-[#222]'>Sign Up</h2>

@@ -6,6 +6,7 @@ import { useAuth } from '../context/AuthUserContext';
 import { useEffect, useState } from 'react';
 import {db} from '../lib/firebase'
 import Profile from '../components/Profile'
+import Posts from '../components/Posts'
 
 const blog = () => {
   const router = useRouter();
@@ -25,7 +26,7 @@ const blog = () => {
       <Navbar />
       <div id="loggedin" className='pt-[15rem]'>
         <div className='w-[50vw] float-left'>
-
+          <Posts jamal={emailAddress} />
         </div>
         <div className='w-[50vw] float-right'>
           <Profile jamal={emailAddress} showPage={noPage}  /> 

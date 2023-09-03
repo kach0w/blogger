@@ -5,6 +5,7 @@ import { useAuth } from '../context/AuthUserContext';
 import { useEffect, useState } from 'react';
 import {db} from '../lib/firebase'
 import Profile from '../components/Profile'
+import Posts from '../components/Posts'
 import livejournal from '../assets/livejournal.jpg'
 
 export default function Home() {
@@ -58,11 +59,11 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap" rel="stylesheet"/>
       </Head>
       <Navbar />
-      <div id="loggedin" className='pt-[15rem]'>
-        <div className='w-[50vw] float-left'>
-
+      <div id="loggedin" className=''>
+        <div className='w-[50vw] float-left pt-[10rem]'>
+          <Posts jamal={emailAddress} />
         </div>
-        <div className='w-[50vw] float-right'>
+        <div className='w-[50vw] float-right pt-[15rem]'>
         <Profile edit={yesedit} jamal={emailAddress} showPage={noPage}  /> 
 
         </div>

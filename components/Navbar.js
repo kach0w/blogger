@@ -29,10 +29,14 @@ const Navbar = () => {
 
       document.getElementById("signout").style.display = "inline-block";
       document.getElementById("signin").style.display = "none";
+      document.getElementById("entry").style.display = "inline-block";
+      document.getElementById("pfp").style.display = "inline-block";
       // document.getElementById("signin").innerText = "Sign Out";
     } else {
       document.getElementById("signin").style.display = "inline-block";
       document.getElementById("signout").style.display = "none";
+      document.getElementById("entry").style.display = "none";
+      document.getElementById("pfp").style.display = "none";
     }
   }, [authUser])
   
@@ -48,11 +52,11 @@ const Navbar = () => {
           {/* <Dropdown /> */}
           {/* <a className='text-[#222] leading-sm inline-block align-middle font-black pt-[0.36rem] pr-5  hover:text-[#505050]' href="../about">About</a>*/}
           {/* <a className='text-[white] text-[1.5rem] mb-1 inline-block align-middle pt-[0.36rem] pr-5  hover:text-slate-300' href={bloglink}>Your Blog</a>  */}
-          <a className='text-[white] text-[1.5rem] mb-1 inline-block align-middle pt-[0.36rem] pr-7  hover:text-slate-300' href="/entry">Add an Entry</a> 
+          <a id="entry" className='text-[white] text-[1.5rem] mb-1 inline-block align-middle pt-[0.36rem] pr-7  hover:text-slate-300' href="/entry">Add an Entry</a> 
           <a className='text-[white] text-[1.5rem] mb-1 inline-block align-middle pt-[0.36rem] pr-7  hover:text-slate-300' href="/people">People</a> 
           <button id="signin" className='mt-1 pb-2 leading-sm inline-block align-middle pt-[0.36rem]  hover:text-slate-300 hover:underline' onClick={login}>Login / Sign Up</button>
           <button id="signout" className='mt-1 rounded-md pb-2 leading-sm align-middle pt-[0.36rem] hidden  hover:text-slate-300 hover:underline' onClick={signOut}>Sign Out</button>
-          <img className='pl-4 inline-block w-[3rem]' src={imageurl} />
+          <img id="pfp" className='pl-4 inline-block w-[3rem]' src={imageurl} />
         </div>
       </div>
     </div>
