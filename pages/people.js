@@ -30,7 +30,7 @@ export default function Home() {
         setPeoples(peoplesData)
     }
     fetchPeople()
-  }, [authUser])
+  })
   
   return (
     <div className='w-[100vw] text-[#222] h-[100vh] bg-[#f3f3f3] text-center'>
