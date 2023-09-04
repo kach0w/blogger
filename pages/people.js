@@ -6,7 +6,7 @@ import {db} from '../lib/firebase'
 import Profile from '../components/Profile'
 
 export default function Home() {
-  const { authUser, signOut, emailAddress } = useAuth();
+  const { emailAddress } = useAuth();
   const [peoples, setPeoples] = useState([])
   
   const handleSaveClick = () => {
@@ -44,7 +44,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div className='w-[40rem] pt-[8rem] mx-auto'> 
-        <p className='pt-5 text-[1.1rem]'>Note that this is only the people who set their profile t public when signing up.</p>   
+        <p className='pt-5 text-[1.1rem]'>Note that this is only the people who set their profile to public when signing up.</p>   
         <ul>
             {peoples.map((person) => {
                 const noedit = false;
@@ -56,7 +56,7 @@ export default function Home() {
                     return (
                     <li className="mt-10" key={person.id}>
                       <a href={blogurl}>
-                        <Profile edit={noedit} jamal={person.email} showPage="true" />
+                        <Profile edit={noedit} jamal={person.email} showPage={showPage} />
                       </a>
                     </li>
                     );
