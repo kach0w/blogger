@@ -44,7 +44,7 @@ export default function Home() {
       </Head>
       <Navbar />
       <div className='w-[40rem] pt-[8rem] mx-auto'> 
-        <p className='pt-5 text-[1.1rem]'>Note that this is only the people who selected "public" when signing up.</p>   
+        <p className='pt-5 text-[1.1rem]'>Note that this is only the people who set their profile t public when signing up.</p>   
         <ul>
             {peoples.map((person) => {
                 const noedit = false;
